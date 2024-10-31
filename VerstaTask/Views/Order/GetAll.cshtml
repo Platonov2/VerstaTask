@@ -1,0 +1,58 @@
+﻿@model IEnumerable<VerstaTask.Models.Orders.Order>
+
+<p>
+    @Html.ActionLink("Создать заказ", "create", "orders")
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.CityFrom)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AddressFrom)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CityTo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AddressTo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Weight)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RecievingDate)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CityFrom)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CityTo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AddressFrom)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AddressTo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Weight)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.RecievingDate)
+                </td>
+                <td id="detailsLink">
+                    @Html.ActionLink("Подробности", "details", "orders", new { id = item.Id }, null)
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -1,0 +1,45 @@
+﻿@model VerstaTask.Models.Orders.Order
+@{
+    Guid id = Guid.NewGuid(); 
+}
+
+<h1>Создание заказа</h1>
+
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <table>
+                <tr>
+                    <td>Идентификатор:</td>
+                    <td> @id </td>
+                    <input type="hidden" value="@id" name="id" />
+                </tr>
+                <tr>
+                    <td>Город отправителя:</td>
+                    <td><input type="text" name="CityFrom" /> </td>
+                </tr>
+                <tr>
+                    <td>Адрес отправителя:</td>
+                    <td><input type="text" name="AddressFrom" /></td>
+                </tr>
+                <tr>
+                    <td>Город получателя:</td>
+                    <td><input type="text" name="CityTo" /></td>
+                </tr>
+                <tr>
+                    <td>Адрес получателя:</td>
+                    <td><input type="text" name="AddressTo" /></td>
+                </tr>
+                <tr>
+                    <td>Вес груза:</td>
+                    <td><input type="number" name="Weight" /></td>
+                </tr>
+                <tr>
+                    <td>Дата забора груза:</td>
+                    <td><input type="date" name="RecievingDate" /></td>
+                </tr>
+                <tr><td><input type="submit" value="Отправить" /> </td><td></td></tr>
+            </table>
+        </form>
+    </div>
+</div>
